@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  background-color: cadetblue;
+}
+
+#mainbody {
+  width: 100px;
+  margin: auto;
+}
+
+#calculator {
+  margin: -10px 0px 0px 10px;
+  font-size: 14px;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+#toproll {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  margin: 10px 0px 0px -10px;
+}
+
+#bigdiv {
+  height: 120px;
+  width: 330px;
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 50px;
+  /* border: none; */
+  /* border-radius: 30px; */
+  background-color: rgba(0, 0, 0, 0.068);
+  color: black;
+  /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+}
+#output {
+  color: rgb(174, 20, 174);
+}
+/* #answer{
+    color: whitesmoke;
+} */
+
+#answer {
+  border: 0px solid;
+  width: 300px;
+  height: 30px;
+  color: whitesmoke;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+}
+#boxdiv {
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  width: 320px;
+  height: 650px;
+  padding: 20px;
+  margin: 30px 0px 0px -70px;
+  background-color: rgb(254, 252, 252);
+}
+
+#toproll h5 {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+li {
+  list-style: none;
+}
+
+#thelist {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  margin: 20px 0px 0px 0px;
+}
+
+#inputcalculator {
+  display: flex;
+  flex-direction: row;
+  /* margin: 10px 0px 0px 0px; */
+  padding: 10px;
+  flex-wrap: wrap;
+  width: 400px;
+}
+#inputcalculator button:hover {
+  background-color: rgb(251, 251, 251);
+}
+
+button {
+  padding: 15px;
+  margin: 30px 10px 0px -3px;
+  width: 65px;
+  border: 0px solid;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: whitesmoke;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+#final {
+  text-align: center;
+}
+#answer1 {
+  font-size: 20px;
+}
+#answer2 {
+  font-size: 20px;
+}
+#result {
+  font-size: 20px;
+}

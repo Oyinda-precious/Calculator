@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Calculator</title>
+    <link rel="stylesheet" href="calculator2.css" />
+  </head>
+
+  <body>
+    <main id="mainbody">
+      <div id="boxdiv">
+        <div id="calculator">Calculator</div>
+        <div id="toproll">
+          <img id="iconpix" src="icons8-menu-18.png" alt="" />
+          <h5>Standard</h5>
+          <img id="iconpix" src="icons8-webpage-scrolling-up-20.png" alt="" />
+        </div>
+        <div id="bigdiv">
+          <div>
+            <span id="answer1"></span>
+            <span id="result"></span>
+            <span id="answer2"></span>
+          </div>
+          <!-- <div id="result"></div> -->
+          <!-- <div id="answer2"></div> -->
+          <div id="final"></div>
+        </div>
+
+        <div>
+          <ul id="thelist">
+            <li>MC</li>
+            <li>MR</li>
+            <li>M+</li>
+            <li>M-</li>
+            <li>MS</li>
+            <li>M</li>
+          </ul>
+        </div>
+        <div id="inputcalculator">
+          <div>
+            <button onclick="num('%')" id="btn1">%</button>
+            <button onclick="clearM('')" id="btn2">CE</button>
+            <button onclick="deleteMe('')" id="btn3">DEL</button>
+            <button onclick="addNum('/')" id="btn4">/</button>
+          </div>
+          <div>
+            <button onclick="num('7')" id="btn5">7</button>
+            <button onclick="num('8')" id="btn6">8</button>
+            <button onclick="num('9')" id="btn7">9</button>
+            <button onclick="addNum('*')" id="btn8">*</button>
+          </div>
+          <div>
+            <button onclick="num('4')" id="btn9">4</button>
+            <button onclick="num('5')" id="btn10">5</button>
+            <button onclick="num('6')" id="btn11">6</button>
+            <button onclick="addNum('-')" id="btn12">-</button>
+          </div>
+          <div>
+            <button onclick="num('1')" id="btn13">1</button>
+            <button onclick="num('2')" id="btn14">2</button>
+            <button onclick="num('3')" id="btn15">3</button>
+            <button onclick="addNum('+')" id="btn16">+</button>
+          </div>
+          <div>
+            <button onclick="addNum('+/-')" id="btn17">+/-</button>
+            <button onclick="num('0')" id="btn18">0</button>
+            <button onclick="num('.')" id="btn19">.</button>
+            <button onclick="calculateMe()" id="btn20">=</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
+<script>
+  let done = false;
+
+  function num(params) {
+    if (done == false) {
+      if (result.innerText.trim() !== "") {
+        answer2.innerText += params;
+        final.innerText = "";
+        return;
+      }
+      answer1.innerText += params;
+      final.innerText = "";
+    } else {
+      answer1.innerText = params;
+      answer2.innerText = "";
+      result.innerText = "";
+      final.innerText = "";
+      done = false;
+    }
+  }
+
+  function addNum(params) {
+    // if (result.innerText.trim() == params) {
+    //   console.log(params);
+
+    //   calculateMe();
+
+    //   return;
+    // }
+    //
+    if (done == true) {
+      done = false;
+    }
+    if (final.innerText == "") {
+      result.innerText = params;
+    } else {
+      answer1.innerText = final.innerText;
+      result.innerText = params;
+      answer2.innerText = "";
+      console.log(final.innerText);
+    }
+  }
+
+  function calculateMe() {
+    let finalAns = "";
+    if (result.innerText.trim() === "+") {
+      finalAns = Number(answer1.innerText) + Number(answer2.innerText);
+    } else if (result.innerText.trim() === "-") {
+      finalAns = Number(answer1.innerText) - Number(answer2.innerText);
+    } else if (result.innerText.trim() === "/") {
+      finalAns = Number(answer1.innerText) / Number(answer2.innerText);
+    } else if (result.innerText.trim() === "*") {
+      finalAns = Number(answer1.innerText) * Number(answer2.innerText);
+    }
+    final.innerText = finalAns;
+    done = true;
+    // answer1.innerText = final.innerText;
+    // answer1.innerText = "";
+    // result.innerText = "";
+    // answer2.innerText = "";
+    //result.innerText = final.innerText;
+  }
+
+  function clearM(params) {
+    answer1.innerText = "";
+    answer2.innerText = "";
+    result.innerText = "";
+    final.innerText = "";
+  }
+  function deleteMe(params) {
+    let theDelete = final.innerText.split("");
+    theDelete.pop();
+    if (theDelete.length > 0) {
+      final.innerText = theDelete.join("");
+    } else {
+      final.innerText = "0";
+    }
+  }
+
+  // function display(value) {
+  //   document.getElementById("answer").value += value + "";
+  //   console.log(document.getElementById("answer").value + value + "");
+  // }
+  // function clearMe() {
+  //   document.getElementById("answer").value = "";
+  //   console.log((document.getElementById("answer").value = ""));
+  // }
+</script>
